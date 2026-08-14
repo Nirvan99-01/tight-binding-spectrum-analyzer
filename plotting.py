@@ -1,5 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from pathlib import Path
+
+FIGURES_DIR = Path(__file__).resolve().parent / "figures"
+FIGURES_DIR.mkdir(exist_ok=True)
 
 
 def plot_spectrum(eigenvalues: np.ndarray, title="Energy Spectrum") -> None:
@@ -34,6 +38,7 @@ def plot_spectrum(eigenvalues: np.ndarray, title="Energy Spectrum") -> None:
     plt.title(title)
     plt.xlabel('State Index')
     plt.ylabel('Energy')
+    plt.savefig(FIGURES_DIR / "energy_spectrum.png")
     plt.show()
 
 
@@ -65,8 +70,9 @@ def plot_energy_diff(energy_diffs: np.ndarray, title="Energy Spacings") -> None:
         raise ValueError("energy_diffs must be a 1D array.")
     
     x = np.arange(len(energy_diffs))
-    plt.scatter(x, energy_diffs)
+    plt.plot(x, energy_diffs)
     plt.title(title)
     plt.xlabel('Spacing Index')
     plt.ylabel('Energy Spacing')
+    plt.savefig(FIGURES_DIR / "energy_spacings.png")
     plt.show()

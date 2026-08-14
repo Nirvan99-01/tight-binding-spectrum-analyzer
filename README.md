@@ -22,9 +22,21 @@ Run the simulation from the directory containing the `tight_binding_analyzer` pa
 ```bash
 python -m tight_binding_analyzer.main
 ```
+
 ## Tests
 Run the test suite with:
 
 ```bash
 python -m pytest
 ```
+## Example output
+H.shape: (50, 50)
+First 5 Eigenvalues: [0.60075867 0.6030318  0.60681076 0.61208123 0.6188232 ]
+Eigenvectors shape: (50, 50)
+First 5 Energy Spacings: [0.00227313 0.00377896 0.00527047 0.00674197 0.00818791]
+
+### Energy Spectrum
+![Energy Spectrum](figures/energy_spectrum.png)
+
+### Energy Spacings
+![Energy Spacings](figures/energy_spacings.png)
